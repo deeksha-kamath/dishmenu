@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "971105644183",
+    "firebase_url": "https://dishmenu-93ae1.firebaseio.com",
+    "project_id": "dishmenu-93ae1",
+    "storage_bucket": "dishmenu-93ae1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971105644183:android:3ec408358d440f5f",
+        "android_client_info": {
+          "package_name": "com.example.deeksha.dishmenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971105644183-vq4oqamqcstcobh4hadej5jcriraqog6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQr5EPUIedtj6vYhIDetafjJ-mXD8Stwo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
