@@ -1,6 +1,8 @@
 package com.example.deeksha.dishmenu;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +10,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.deeksha.dishmenu.Model.dishes;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        dish = mDatabase.child("Fishes");
+        dish = mDatabase.child("Dishes");
 
 
 
@@ -41,16 +57,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String name = addName.getText().toString().trim();
                 String price = addPrice.getText().toString().trim();
+                String userId=dish.push().getKey();
+                dishes briyani = new dishes (name,price,"0");
 
-                String userId=Dish.push().getKey();
-                Dish nuste = new Dish (name,price);
-
-                dish.child(userId).setValue(nuste);
-                Toast.makeText(MainActivity.this,"NUste aDeed",Toast.LENGTH_SHORT).show();
+                dish.child(userId).setValue(briyani);
+                Toast.makeText(MainActivity.this,"dish added",Toast.LENGTH_SHORT).show();
 
             }
         });
-
 
         viewlist.setOnClickListener(new View.OnClickListener() {
             @Override
